@@ -9,7 +9,7 @@ $sph = new SphinxClient();
 $sph->setServer('localhost', 9312);
 $sph->setMatchMode(SPH_MATCH_ANY);
 
-$result = $sph->query("doc test");
+$result = $sph->query("test doc");
 // Zend_Debug::dump($result['matches']);
 Zend_Debug::dump($result);
 
