@@ -13,5 +13,5 @@ $sph->setArrayResult(true);
 // $sph->setMatchMode(SPH_MATCH_ANY);
 
 $result = $sph->query("mozilla", 'dhbPageVisitLogIdx');
-// Zend_Debug::dump($result['matches']);
-Zend_Debug::dump($result);
+Zend_Debug::dump($result['matches']);
+// Zend_Debug::dump($result);
