@@ -22,8 +22,9 @@ class Remote {
     }
 
     public static function getContentByCurl($url) {
-        $ch = curl_init($url);
-        $options = array(  
+        $ch = curl_init();
+        $options = array(
+            CURLOPT_URL            => $url,
             CURLOPT_RETURNTRANSFER => true,  
             CURLOPT_HEADER         => false,  
         ); 
