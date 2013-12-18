@@ -1,6 +1,6 @@
 <?php
 require_once 'Zend/Loader/Autoloader.php';
-Zend_Loader_Autoloader::getInstance();
+Zend_Loader_Autoloader::getInstance()->setFallbackAutoloader(true);
 
 //$date = Zend_Date::now();
 //Zend_Debug::dump($date->toString());
@@ -44,3 +44,8 @@ JSON;
 
 Zend_Debug::dump($json);
 
+use Tracking\Http\Request;
+
+$request = new Request();
+
+Zend_Debug::dump($request);
