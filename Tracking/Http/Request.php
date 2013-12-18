@@ -8,15 +8,15 @@
 
 namespace Tracking\Http;
 
+use Tracking\Http\BaseTrait;
+
 class Request {
-    const GET = 'GET';
-    const POST = 'POST';
+    use BaseTrait;
+
+    const GET    = 'GET';
+    const POST   = 'POST';
     const DELETE = 'DELETE';
-    const PUST = 'PUT';
+    const PUT    = 'PUT';
 
     protected $_uri;
-
-    public function __construct() {
-
-    }
 }
