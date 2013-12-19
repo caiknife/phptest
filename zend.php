@@ -49,3 +49,17 @@ use Tracking\Http\Request;
 $request = new Request();
 
 Zend_Debug::dump($request);
+
+/**
+ * migrate ZF1 and ZF2 together
+ */
+
+use Zend\Uri\Uri;
+
+$uri = new Uri('http://www.php.net/manual/zh/language.oop5.overloading.php');
+Zend_Debug::dump($uri->isValid());
+Zend_Debug::dump($uri->isAbsolute());
+Zend_Debug::dump($uri->isValidRelative());
+Zend_Debug::dump($uri->getScheme());
+Zend_Debug::dump($uri->getHost());
+Zend_Debug::dump($uri->getPath());
