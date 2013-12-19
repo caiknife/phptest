@@ -48,7 +48,11 @@ use Tracking\Http\Request;
 
 $request = new Request();
 
-Zend_Debug::dump($request);
+$request->asString();
+
+Zend_Debug::dump($request instanceof Request);
+
+Zend_Debug::dump($request instanceof Tracking\Http\Request);
 
 /**
  * migrate ZF1 and ZF2 together
