@@ -1,6 +1,15 @@
 <?php
+$zf2Path = array_pop((explode(PATH_SEPARATOR, get_include_path())));
+require_once $zf2Path . '/Zend/Loader/StandardAutoloader.php';
+$loader = new Zend\Loader\StandardAutoloader(array(
+    'autoregister_zf' => true,
+));
+$loader->setFallbackAutoloader(true);
+$loader->register();
+
 require_once 'Zend/Loader/Autoloader.php';
 Zend_Loader_Autoloader::getInstance()->setFallbackAutoloader(true);
+
 
 //$date = Zend_Date::now();
 //Zend_Debug::dump($date->toString());
@@ -67,3 +76,18 @@ Zend_Debug::dump($uri->isValidRelative());
 Zend_Debug::dump($uri->getScheme());
 Zend_Debug::dump($uri->getHost());
 Zend_Debug::dump($uri->getPath());
+
+use Zend\Uri\UriFactory;
+
+$uri = UriFactory::factory($uri->toString());
+Zend_Debug::dump($uri->isValid());
+Zend_Debug::dump($uri->isAbsolute());
+Zend_Debug::dump($uri->isValidRelative());
+Zend_Debug::dump($uri->getScheme());
+Zend_Debug::dump($uri->getHost());
+Zend_Debug::dump($uri->getPath());
+
+
+Zend_Debug::dump(get_include_path());
+
+Zend_Debug::dump(get_included_files());
