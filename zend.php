@@ -2,9 +2,9 @@
 $zf2Path = array_pop((explode(PATH_SEPARATOR, get_include_path())));
 require_once $zf2Path . '/Zend/Loader/StandardAutoloader.php';
 $loader = new Zend\Loader\StandardAutoloader(array(
-    'autoregister_zf' => true,
+    Zend\Loader\StandardAutoloader::AUTOREGISTER_ZF => true,
+    Zend\Loader\StandardAutoloader::ACT_AS_FALLBACK => true,
 ));
-$loader->setFallbackAutoloader(true);
 $loader->register();
 
 require_once 'Zend/Loader/Autoloader.php';
