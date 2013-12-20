@@ -6,6 +6,10 @@ $loader = new Zend\Loader\StandardAutoloader(array(
 ));
 $loader->register();
 
+Zend_Debug::dump(Zend_Version::VERSION);
+
+Zend_Debug::dump(Zend\Version\Version::VERSION);
+
 $date = Zend_Date::now();
 Zend_Debug::dump($date->toString());
 Zend_Debug::dump($date->isLeapYear());
