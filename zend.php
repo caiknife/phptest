@@ -91,3 +91,13 @@ Zend_Debug::dump($uri->getPath());
 Zend_Debug::dump(get_include_path());
 
 Zend_Debug::dump(get_included_files());
+
+/**
+ * use ZF2 http client
+ */
+use Zend\Http\Client;
+
+$client = new Client('http://www.php.net');
+$response = $client->send();
+
+Zend_Debug::dump($response->getBody());
