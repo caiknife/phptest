@@ -1,8 +1,9 @@
 <?php
 require_once 'Zend2/Loader/StandardAutoloader.php';
-$loader = new Zend\Loader\StandardAutoloader(array(
-    Zend\Loader\StandardAutoloader::AUTOREGISTER_ZF => true,
-    Zend\Loader\StandardAutoloader::ACT_AS_FALLBACK => true,
+use Zend\Loader\StandardAutoloader;
+$loader = new StandardAutoloader(array(
+    StandardAutoloader::AUTOREGISTER_ZF => true,
+    StandardAutoloader::ACT_AS_FALLBACK => true,
 ));
 $loader->register();
 
