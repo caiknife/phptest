@@ -9,3 +9,15 @@ var_dump(memory_get_usage());
 unset($a);
 
 var_dump(memory_get_usage());
+
+class RedisClient {
+    protected $_redis;
+
+    public function __construct() {
+        $this->_redis = new Redis();
+    }
+
+    public function __call($method, $args) {
+        call_user_func_array(array($this->_redis, $method), $args);
+    }
+}
