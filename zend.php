@@ -1,35 +1,30 @@
 <?php
-$zf2Path = array_pop((explode(PATH_SEPARATOR, get_include_path())));
-require_once $zf2Path . '/Zend/Loader/StandardAutoloader.php';
+require_once 'Zend2/Loader/StandardAutoloader.php';
 $loader = new Zend\Loader\StandardAutoloader(array(
     Zend\Loader\StandardAutoloader::AUTOREGISTER_ZF => true,
     Zend\Loader\StandardAutoloader::ACT_AS_FALLBACK => true,
 ));
 $loader->register();
 
-require_once 'Zend/Loader/Autoloader.php';
-Zend_Loader_Autoloader::getInstance()->setFallbackAutoloader(true);
+$date = Zend_Date::now();
+Zend_Debug::dump($date->toString());
+Zend_Debug::dump($date->isLeapYear());
+Zend_Debug::dump($date->isToday());
+Zend_Debug::dump($date->isYesterday());
+Zend_Debug::dump($date->isTomorrow());
 
+$currency = new Zend_Currency();
+Zend_Debug::dump($currency->toCurrency());
+Zend_Debug::dump($currency->toCurrency(999));
+Zend_Debug::dump($currency->getCurrencyList());
+$currency->setValue(11233);
+Zend_Debug::dump($currency->toCurrency());
 
-//$date = Zend_Date::now();
-//Zend_Debug::dump($date->toString());
-//Zend_Debug::dump($date->isLeapYear());
-//Zend_Debug::dump($date->isToday());
-//Zend_Debug::dump($date->isYesterday());
-//Zend_Debug::dump($date->isTomorrow());
-//
-//$currency = new Zend_Currency();
-//Zend_Debug::dump($currency->toCurrency());
-//Zend_Debug::dump($currency->toCurrency(999));
-//Zend_Debug::dump($currency->getCurrencyList());
-//$currency->setValue(11233);
-//Zend_Debug::dump($currency->toCurrency());
-//
-//$fig = new Zend_Text_Figlet();
-//Zend_Debug::dump($fig->render('CaiKnife'));
-//
-//$uri = Zend_Uri::factory('http://www.caiknife.com/index.php?name=caiknife&power=acjaif#id');
-//Zend_Debug::dump($uri);
+$fig = new Zend_Text_Figlet();
+Zend_Debug::dump($fig->render('CaiKnife'));
+
+$uri = Zend_Uri::factory('http://www.caiknife.com/index.php?name=caiknife&power=acjaif#id');
+Zend_Debug::dump($uri);
 
 $request = new Zend_Http_Client();
 $request->setConfig(array(
