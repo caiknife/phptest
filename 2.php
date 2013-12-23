@@ -1,4 +1,7 @@
 <?php
+require_once 'zend_autoload.php';
+require_once 'Kint/Kint.class.php';
+
 var_dump('Hello, world!');
 var_dump(memory_get_usage());
 

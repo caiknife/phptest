@@ -1,9 +1,6 @@
 <?php
-ini_set('display_errors', 'on');
-error_reporting(E_ALL);
-
-require_once 'Zend/Loader/Autoloader.php';
-Zend_Loader_Autoloader::getInstance();
+require_once 'zend_autoload.php';
+require_once 'Kint/Kint.class.php';
 
 class Base {
     public function __get($name) {
@@ -15,11 +12,11 @@ class Base {
     }
 
     public function __isset($name) {
-        Zend_Debug::dump("you are judging {$name}");    
+        Zend_Debug::dump("you are judging {$name}");
     }
 
     public function __unset($name) {
-        Zend_Debug::dump("you are unsetting {$name}"); 
+        Zend_Debug::dump("you are unsetting {$name}");
     }
 }
 

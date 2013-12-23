@@ -1,11 +1,6 @@
 <?php
-require_once 'Zend2/Loader/StandardAutoloader.php';
-use Zend\Loader\StandardAutoloader;
-$loader = new StandardAutoloader(array(
-    StandardAutoloader::AUTOREGISTER_ZF => true,
-    StandardAutoloader::ACT_AS_FALLBACK => true,
-));
-$loader->register();
+require_once 'zend_autoload.php';
+require_once 'Kint/Kint.class.php';
 
 Zend_Debug::dump(Zend_Version::VERSION);
 
@@ -34,7 +29,6 @@ Zend_Debug::dump($uri);
 $request = new Zend_Http_Client();
 $request->setConfig(array(
     'useragent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0',
-    ''
 ));
 
 $request->setUri('http://www.php.net/');

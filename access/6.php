@@ -1,4 +1,7 @@
 <?php
+require_once 'zend_autoload.php';
+require_once 'Kint/Kint.class.php';
+
 // 默认不能继承
 final class Singleton {
     // 懒汉单例模式

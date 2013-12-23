@@ -1,9 +1,6 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set('display_errors', 'on');
-require_once 'kint/Kint.class.php';
-require_once 'Zend/Loader/Autoloader.php';
-Zend_Loader_Autoloader::getInstance();
+require_once 'zend_autoload.php';
+require_once 'Kint/Kint.class.php';
 
 const NAME = 'caiknife';
 

@@ -1,9 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
-
-require_once 'Zend/Loader/Autoloader.php';
-Zend_Loader_Autoloader::getInstance();
+require_once 'zend_autoload.php';
+require_once 'Kint/Kint.class.php';
 
 class Remote {
     const FILE_GET_CONTENTS = 1;
@@ -25,12 +22,12 @@ class Remote {
         $ch = curl_init();
         $options = array(
             CURLOPT_URL            => $url,
-            CURLOPT_RETURNTRANSFER => true,  
-            CURLOPT_HEADER         => false,  
-        ); 
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HEADER         => false,
+        );
         curl_setopt_array($ch, $options);
         $result = curl_exec($ch);
-        curl_close($ch); 
+        curl_close($ch);
         return $result;
     }
 
@@ -57,7 +54,7 @@ class Remote {
         Zend_Debug::dump($this->_endTime - $this->_startTime);
     }
 
-    
+
 }
 
 $r = new Remote();

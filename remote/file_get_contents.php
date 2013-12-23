@@ -1,7 +1,6 @@
 <?php
-
-require_once 'Zend/Loader/Autoloader.php';
-Zend_Loader_Autoloader::getInstance();
+require_once 'zend_autoload.php';
+require_once 'Kint/Kint.class.php';
 
 $a = null;
 $b = 100;

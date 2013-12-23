@@ -1,4 +1,7 @@
 <?php
+require_once 'zend_autoload.php';
+require_once 'Kint/Kint.class.php';
+
 $mc = new Memcache();
 $mc->addServers(array(
     array('127.0.0.1', 11211, 40),
