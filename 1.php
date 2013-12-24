@@ -1,6 +1,6 @@
 <?php
 require_once 'zend_autoload.php';
-require_once 'Kint/Kint.class.php';
+require_once 'kint/Kint.class.php';
 
 const NAME = 'caiknife';
 
@@ -22,3 +22,4 @@ $b = B::create();
 Kint::dump(get_class($b));
 
 Kint::dump($b->getName());
+

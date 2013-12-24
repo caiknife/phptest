@@ -1,3 +1,3 @@
 <?php
 require_once 'zend_autoload.php';
-require_once 'Kint/Kint.class.php';
+require_once 'kint/Kint.class.php';
