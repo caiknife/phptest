@@ -1,6 +1,5 @@
 <?php
 require_once 'zend_autoload.php';
-require_once 'kint/Kint.class.php';
 
 class Remote {
     const FILE_GET_CONTENTS = 1;

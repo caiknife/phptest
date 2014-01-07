@@ -1,6 +1,5 @@
 <?php
 require_once 'zend_autoload.php';
-require_once 'kint/Kint.class.php';
 
 Zend_Debug::dump(Zend_Version::VERSION);
 
