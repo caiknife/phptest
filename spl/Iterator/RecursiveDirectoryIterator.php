@@ -7,14 +7,17 @@
  */
 require_once 'zend_autoload.php';
 
-$iter = new RecursiveDirectoryIterator(dirname(__DIR__), RecursiveDirectoryIterator::SKIP_DOTS);
+$iter = new RecursiveDirectoryIterator(dirname(__DIR__), RecursiveDirectoryIterator::SKIP_DOTS |
+    RecursiveDirectoryIterator::KEY_AS_FILENAME);
 
 Kint::dump($iter->getSubPath(), $iter->getSubPathname(), $iter->getChildren());
 
-foreach ($iter as $file) {
-    Kint::dump($file->getPathname());
+foreach ($iter as $key => $file) {
+    Kint::dump($key, $file->getPathname());
 }
 
-foreach ($iter->getChildren() as $file) {
-    Kint::dump($file->getPathname());
+Zend_Debug::dump('----------------');
+
+foreach ($iter->getChildren() as $key => $file) {
+    Kint::dump($key, $file->getPathname());
 }
