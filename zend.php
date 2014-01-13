@@ -1,29 +1,31 @@
 <?php
 require_once 'zend_autoload.php';
 
-Zend_Debug::dump(Zend_Version::VERSION);
+use \Zend\Debug\Debug;
 
-Zend_Debug::dump(Zend\Version\Version::VERSION);
+Debug::dump(Zend_Version::VERSION);
+
+Debug::dump(Zend\Version\Version::VERSION);
 
 $date = Zend_Date::now();
-Zend_Debug::dump($date->toString());
-Zend_Debug::dump($date->isLeapYear());
-Zend_Debug::dump($date->isToday());
-Zend_Debug::dump($date->isYesterday());
-Zend_Debug::dump($date->isTomorrow());
+Debug::dump($date->toString());
+Debug::dump($date->isLeapYear());
+Debug::dump($date->isToday());
+Debug::dump($date->isYesterday());
+Debug::dump($date->isTomorrow());
 
 $currency = new Zend_Currency();
-Zend_Debug::dump($currency->toCurrency());
-Zend_Debug::dump($currency->toCurrency(999));
-Zend_Debug::dump($currency->getCurrencyList());
+Debug::dump($currency->toCurrency());
+Debug::dump($currency->toCurrency(999));
+Debug::dump($currency->getCurrencyList());
 $currency->setValue(11233);
-Zend_Debug::dump($currency->toCurrency());
+Debug::dump($currency->toCurrency());
 
 $fig = new Zend_Text_Figlet();
-Zend_Debug::dump($fig->render('CaiKnife'));
+Debug::dump($fig->render('CaiKnife'));
 
 $uri = Zend_Uri::factory('http://www.caiknife.com/index.php?name=caiknife&power=acjaif#id');
-Zend_Debug::dump($uri);
+Debug::dump($uri);
 
 $request = new Zend_Http_Client();
 $request->setConfig(array(
@@ -32,7 +34,7 @@ $request->setConfig(array(
 
 $request->setUri('http://www.php.net/');
 
-Zend_Debug::dump($request->getUri(true));
+Debug::dump($request->getUri(true));
 
 $json = <<<JSON
 var people = {
@@ -44,7 +46,7 @@ var people = {
 };
 JSON;
 
-Zend_Debug::dump($json);
+Debug::dump($json);
 
 use Tracking\Http\Request;
 
@@ -52,9 +54,9 @@ $request = new Request();
 
 $request->asString();
 
-Zend_Debug::dump($request instanceof Request);
+Debug::dump($request instanceof Request);
 
-Zend_Debug::dump($request instanceof Tracking\Http\Request);
+Debug::dump($request instanceof Tracking\Http\Request);
 
 /**
  * migrate ZF1 and ZF2 together
@@ -63,27 +65,27 @@ Zend_Debug::dump($request instanceof Tracking\Http\Request);
 use Zend\Uri\Uri;
 
 $uri = new Uri('http://www.php.net/manual/zh/language.oop5.overloading.php');
-Zend_Debug::dump($uri->isValid());
-Zend_Debug::dump($uri->isAbsolute());
-Zend_Debug::dump($uri->isValidRelative());
-Zend_Debug::dump($uri->getScheme());
-Zend_Debug::dump($uri->getHost());
-Zend_Debug::dump($uri->getPath());
+Debug::dump($uri->isValid());
+Debug::dump($uri->isAbsolute());
+Debug::dump($uri->isValidRelative());
+Debug::dump($uri->getScheme());
+Debug::dump($uri->getHost());
+Debug::dump($uri->getPath());
 
 use Zend\Uri\UriFactory;
 
 $uri = UriFactory::factory($uri->toString());
-Zend_Debug::dump($uri->isValid());
-Zend_Debug::dump($uri->isAbsolute());
-Zend_Debug::dump($uri->isValidRelative());
-Zend_Debug::dump($uri->getScheme());
-Zend_Debug::dump($uri->getHost());
-Zend_Debug::dump($uri->getPath());
+Debug::dump($uri->isValid());
+Debug::dump($uri->isAbsolute());
+Debug::dump($uri->isValidRelative());
+Debug::dump($uri->getScheme());
+Debug::dump($uri->getHost());
+Debug::dump($uri->getPath());
 
 
-Zend_Debug::dump(get_include_path());
+Debug::dump(get_include_path());
 
-Zend_Debug::dump(get_included_files());
+Debug::dump(get_included_files());
 
 /**
  * use ZF2 http client
@@ -93,4 +95,4 @@ use Zend\Http\Client;
 $client = new Client('http://www.php.net');
 $response = $client->send();
 
-Zend_Debug::dump($response->getBody());
+Debug::dump($response->getBody());
