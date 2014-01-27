@@ -12,7 +12,7 @@ namespace Tracking\Http;
 trait BaseTrait {
     protected $_name;
 
-    public function asString() {
+    public static function asString() {
         \Zend_Debug::dump(__CLASS__);
     }
-} 
+}
