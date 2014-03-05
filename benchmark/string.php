@@ -25,6 +25,7 @@ class Benchmark {
 
     public function setRepeatTimes($repeatTimes) {
         $this->_repeatTimes = $repeatTimes;
+        return $this;
     }
 
     public function addFormatter(StringFormatter $formatter) {
