@@ -10,7 +10,8 @@ require_once 'zend_autoload.php';
 $iter = new RecursiveDirectoryIterator(dirname(__DIR__), RecursiveDirectoryIterator::SKIP_DOTS |
     RecursiveDirectoryIterator::KEY_AS_FILENAME);
 
-Kint::dump($iter->getSubPath(), $iter->getSubPathname(), $iter->getChildren());
+Kint::dump($iter->getPath(), $iter->getRealPath());
+
 
 foreach ($iter as $key => $file) {
     Kint::dump($key, $file->getPathname());
