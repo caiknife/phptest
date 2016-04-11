@@ -14,7 +14,7 @@ Debug::dump($date->isToday());
 Debug::dump($date->isYesterday());
 Debug::dump($date->isTomorrow());
 
-$currency = new Zend_Currency();
+$currency = new Zend_Currency(null, 'zh_CN');
 Debug::dump($currency->toCurrency());
 Debug::dump($currency->toCurrency(999));
 Debug::dump($currency->getCurrencyList());
