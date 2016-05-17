@@ -59,6 +59,6 @@ class Remote {
 $r = new Remote();
 $url = 'http://ip.taobao.com/service/getIpInfo.php?ip=210.210.200.200';
 
-$r->remoteOpen($url, Remote::FILE_GET_CONTENTS);
+//$r->remoteOpen($url, Remote::FILE_GET_CONTENTS);
 
 $r->remoteOpen($url, Remote::CURL);
