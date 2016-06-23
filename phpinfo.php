@@ -6,4 +6,5 @@
  * Time: 16:15
  */
 
+session_start();
 phpinfo();
